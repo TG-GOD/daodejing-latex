@@ -1,0 +1,25 @@
+name: Compile LaTeX to PDF
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch: # 允许你手动点击按钮触发编译
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库代码
+        uses: actions/checkout@v4
+
+      - name: 编译 LaTeX (XeLaTeX 引擎)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          args: "-xelatex -file-line-error -interaction=nonstopmode"
+
+      - name: 上传生成的 PDF 成品
+        uses: actions/upload-artifact@v4
+        with:
+          name: 道德经解密全书-完整版
+          path: main.pdf
