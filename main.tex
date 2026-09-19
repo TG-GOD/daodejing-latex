@@ -1,0 +1,116 @@
+\documentclass[UTF8,a4paper,12pt]{ctexart}
+
+% ==================== 宏包导入 ====================
+\usepackage{geometry}
+\geometry{left=2.5cm, right=2.5cm, top=2.8cm, bottom=2.8cm, headheight=14pt}
+
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{booktabs, longtable, makecell}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\definecolor{amber}{RGB}{255, 191, 0} % <--- 加上这一行自定义 amber 颜色
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+\usepackage{float}
+\usepackage[colorlinks=true, linkcolor=blue!70!black, citecolor=green!60!black, urlcolor=teal]{hyperref}
+\usepackage{xurl}
+% ==================== 页面与排版风格 ====================
+\linespread{1.35}
+\setlength{\parskip}{0.5em}
+\setlist{nosep, leftmargin=2em}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\kaishu 曾仕强《道德经解密》全集深度研读笔记}
+\fancyhead[R]{\small\kaishu \leftmark}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.6pt}
+
+% ==================== 极速轻量化专题展示环境 ====================
+% 核心概念定义框
+\newtcolorbox{ConceptBox}[1]{
+    colback=teal!5!white,
+    colframe=teal!70!black,
+    fonttitle=\bfseries\sffamily,
+    title={【概念解构】#1},
+    arc=2mm, boxrule=1pt,
+    left=10pt, right=10pt, top=8pt, bottom=8pt
+}
+
+% 观点与论据推理框
+\newtcolorbox{DeductionBox}[1]{
+    colback=blue!3!white,
+    colframe=blue!65!black,
+    fonttitle=\bfseries\sffamily,
+    title={【论证与逻辑推演】#1},
+    arc=2mm, boxrule=1pt,
+    left=10pt, right=10pt, top=8pt, bottom=8pt
+}
+
+% 案例复盘框
+\newtcolorbox{CaseBox}[1]{
+    colback=orange!5!white,
+    colframe=orange!80!black,
+    fonttitle=\bfseries\sffamily,
+    title={【案例与经典还原】#1},
+    arc=2mm, boxrule=1pt,
+    left=10pt, right=10pt, top=8pt, bottom=8pt
+}
+% ==================== 标题层级格式设置（彻底去除多余的0.x前缀） ====================
+\setcounter{secnumdepth}{0} % 取消自动层级编号，以正文自带的“第01集/5. 关键案例”为准
+\setcounter{tocdepth}{2}    % 目录依然完整保留卷、集两级索引
+
+\titleformat{\section}
+  {\Large\bfseries\color{blue!80!black}}{}{0em}{}
+
+\titleformat{\subsection}
+  {\large\bfseries\color{teal!80!black}}{}{0em}{}
+
+\titleformat{\subsubsection}
+  {\normalsize\bfseries}{}{0em}{}
+
+% ==================== 正文开始 ====================
+\title{\Huge\textbf{曾仕强教授《道德经解密》系统讲义与研读全书}\\[0.5em]
+\large——老子五千言、中华治理哲学与现代人生处世集成}
+\author{\textbf{系统整理与学术解构工作组}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+老子《道德经》五千言，是中华道家哲学的总源头，其文辞简约而义理宏深。当代国学大师曾仕强教授立足于“易道同源”之体系，打破传统训诂学的文字桎梏，以现代系统论、组织行为学、人际心理学及中国传统中庸之道，对《道德经》八十一章展开了逐章解密。本套资料严格秉持“求真、求深、重构逻辑链条”的原则，逐集还原曾教授的论证脉络、核心观点、案例剖析、管理方法论与修身模型。本讲义不仅作为音视频资料的完备记录，更是一部体系严谨、逻辑严密、可直接指导管理实践与个人修养的高信息密度中文教材。
+\end{abstract}
+
+\clearpage
+\tableofcontents
+\clearpage
+
+% ==================== 模块引入 ====================
+% 分卷文件按批次引入：
+\input{Part_01.tex} % 第 01 集 至 第 05 集（本卷）
+\input{Part_02.tex} % 第 06 集 至 第 10 集（待续）
+\input{Part_03.tex}
+\input{Part_04.tex}
+\input{Part_05.tex}
+\input{Part_06.tex}
+\input{Part_07.tex}
+\input{Part_08.tex}
+\input{Part_09.tex}
+%\input{Part_10.tex}
+%\input{Part_11.tex}
+%\input{Part_12.tex}
+% \input{Part_13.tex}
+% \input{Part_14.tex}
+% \input{Part_15.tex}
+% \input{Part_16.tex}
+
+% \input{Part_16.tex} % 第 76 集 至 第 81 集（待续）
+% \input{Part_Summary.tex} % 全系列内容整合与系统框架图
+
+\end{document}
